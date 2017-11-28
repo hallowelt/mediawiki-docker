@@ -49,6 +49,8 @@ run:
 	-e "DB_PASSWORD=$(db_pass)" \
 	-v $(mount_var):/var/bluespice \
 	-v $(mount_etc):/etc/bluespice \
+	-p $(port):80 \
+	-p 3000:3000 \
 	$(docker_repo)/$(app_name):$(app_version)
 
 .PHONY: docker
